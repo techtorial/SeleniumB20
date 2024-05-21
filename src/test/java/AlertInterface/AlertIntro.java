@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utils.BrowserUtils;
 
 import java.time.Duration;
@@ -30,8 +31,10 @@ public class AlertIntro {
         //Validate the message
         WebElement message=driver.findElement(By.cssSelector("#result"));
         String actualMessage= BrowserUtils.getText(message);
-        String expectedMessage="You successfully clicked an alert";
-        Assert.assertEquals(actualMessage,expectedMessage);
+        String expectedMessage="You successfully clicked an alerts ";
+        SoftAssert softAssert=new SoftAssert();
+        softAssert.assertEquals(actualMessage,expectedMessage);
+//        Assert.assertEquals(actualMessage,expectedMessage);
 
         //Finding the JS Confirm Button and Switch alert
         WebElement jsConfirm=driver.findElement(By.xpath("//button[contains(@onclick,'jsConfirm')]"));
@@ -44,7 +47,8 @@ public class AlertIntro {
         message=driver.findElement(By.cssSelector("#result"));
         String actualMessageJS= BrowserUtils.getText(message);
         String expectedMessageJS="You clicked: Cancel";
-        Assert.assertEquals(actualMessageJS,expectedMessageJS);
+//        Assert.assertEquals(actualMessageJS,expectedMessageJS);
+        softAssert.assertEquals(actualMessageJS,expectedMessageJS);
 
 
         //FINDING THE PROMPT ELEMENT AND HANDLE ALERT
@@ -58,6 +62,8 @@ public class AlertIntro {
         System.out.println(BrowserUtils.getText(message));
         String actualMessagePrompt= BrowserUtils.getText(message);
         String expectedMessagePrompt="You entered: I love Selenium";
-        Assert.assertEquals(actualMessagePrompt,expectedMessagePrompt);
+//        Assert.assertEquals(actualMessagePrompt,expectedMessagePrompt);
+        softAssert.assertEquals(actualMessagePrompt,expectedMessagePrompt);
+        softAssert.assertAll();
     }
 }
