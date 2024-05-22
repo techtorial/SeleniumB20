@@ -32,6 +32,20 @@ public class BankLoginPage {
         Assert.assertEquals(driver.getCurrentUrl(),expectedUrl);
     }
 
+    public void clickManagerLoginButton(){
+        managerLoginButton.click();
+    }
+
+     //STORY: Testing AddCustomer Functionality
+    /*
+    1-Navigate website
+    2-Click Bank Manager Login Button(under LoginPage)
+    3-Create Another Page for BankManagerLogin
+    4-Put all the webElements and methods in here
+    5-Create a Test Class for BankManagerTest
+    6-Call the methods and validate "Customer added successfully" from pop-up and click OK button
+     */
+
 
 
 }

@@ -1,0 +1,30 @@
+package com.qa.Bank.tests;
+
+import com.qa.Bank.pages.BankLoginPage;
+import com.qa.Bank.pages.BankManagerLoginPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import java.time.Duration;
+
+public class BankManagerTest {
+
+    @Test
+    public void validateAddCustomerFunctionality(){
+        //SETUP AUTOMATION
+        WebDriver driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
+        //Click BankManagerLogin Button from LoginPage
+        BankLoginPage bankLoginPage=new BankLoginPage(driver);
+        bankLoginPage.clickManagerLoginButton();
+
+        //Provide All details in AddCustomer Button from BankManager Page
+        BankManagerLoginPage bankManagerLoginPage=new BankManagerLoginPage(driver);
+        bankManagerLoginPage.addCustomer(driver,"Ahmet","Baldir","60143",
+        "Customer added successfully");
+    }
+}

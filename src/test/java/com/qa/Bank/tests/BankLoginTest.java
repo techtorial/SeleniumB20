@@ -21,7 +21,6 @@ public class BankLoginTest {
         BankLoginPage bankLoginPage=new BankLoginPage(driver); //to access the methods from this class
         bankLoginPage.loginPageInformation(driver,"XYZ Bank","XYZ Bank",
                 "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
-
     }
 
 
