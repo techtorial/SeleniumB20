@@ -27,4 +27,5 @@ public class BankManagerTest {
         bankManagerLoginPage.addCustomer(driver,"Ahmet","Baldir","60143",
         "Customer added successfully");
     }
+
 }

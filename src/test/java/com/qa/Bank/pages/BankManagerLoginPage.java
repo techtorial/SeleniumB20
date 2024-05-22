@@ -24,6 +24,8 @@ public class BankManagerLoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     WebElement submitAddCustomer;
 
+
+
     public void addCustomer(WebDriver driver,String firstName,String lastName,String postCode,String expectedMessage){
         addCustomerButton.click();
         this.firstName.sendKeys(firstName);
@@ -34,4 +36,5 @@ public class BankManagerLoginPage {
         Assert.assertTrue(alert.getText().contains(expectedMessage));
         alert.accept();
     }
+
 }
