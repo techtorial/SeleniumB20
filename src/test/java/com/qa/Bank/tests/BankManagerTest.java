@@ -28,4 +28,49 @@ public class BankManagerTest {
         "Customer added successfully");
     }
 
+    @Test
+    public void validateOpenAccountFunctionality(){
+        //SETUP AUTOMATION
+        WebDriver driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
+        //Click BankManagerLogin Button from LoginPage
+        BankLoginPage bankLoginPage=new BankLoginPage(driver);
+        bankLoginPage.clickManagerLoginButton();
+
+        //Provide All details in AddCustomer Button from BankManager Page
+        BankManagerLoginPage bankManagerLoginPage=new BankManagerLoginPage(driver);
+        bankManagerLoginPage.addCustomer(driver,"Ahmet","Baldir","60143",
+                "Customer added successfully");
+        bankManagerLoginPage.openAccount(driver,"Ahmet Baldir","Dollar",
+                "Account created successfully");
+    }
+
+    @Test
+    public void validateCustomersFunctionality(){
+        //SETUP AUTOMATION
+        WebDriver driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+
+        //Click BankManagerLogin Button from LoginPage
+        BankLoginPage bankLoginPage=new BankLoginPage(driver);
+        bankLoginPage.clickManagerLoginButton();
+
+        //Provide All details in AddCustomer Button from BankManager Page
+        BankManagerLoginPage bankManagerLoginPage=new BankManagerLoginPage(driver);
+        bankManagerLoginPage.addCustomer(driver,"Ahmet","Baldir","60143",
+                "Customer added successfully");
+
+        //Open Account Functionality
+        bankManagerLoginPage.openAccount(driver,"Ahmet Baldir","Dollar",
+                "Account created successfully");
+
+        //Customers Functionality
+        bankManagerLoginPage.customers("Ahmet","Ahmet","Baldir",
+                "60143","true");
+    }
 }
