@@ -43,6 +43,6 @@ public class BankCustomerLoginTest {
         bankCustomerLoginPage.loginAsCustomer("Ahmet Baldir");
         bankCustomerLoginPage.deposit("500","Deposit Successful","rgba(255, 0, 0, 1)");
         bankCustomerLoginPage.withdraw("300","Transaction successful","rgba(255, 0, 0, 1)");
-
+        bankCustomerLoginPage.transaction();
     }
 }

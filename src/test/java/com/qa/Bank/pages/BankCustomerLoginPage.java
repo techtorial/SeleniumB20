@@ -31,6 +31,16 @@ public class BankCustomerLoginPage {
     WebElement withdrawButton;
     @FindBy(xpath = "//button[.='Withdraw']")
     WebElement withdrawClickButton;
+    @FindBy(xpath = "//strong[@class='ng-binding'][2]")
+    WebElement balance;
+    @FindBy(xpath = "//button[@ng-click='transactions()']")
+    WebElement transactionButton;
+    @FindBy(xpath = "//tr[@id='anchor0']//td[@class='ng-binding'][2]")
+    WebElement depositTransaction;
+    @FindBy(xpath = "//tr[@id='anchor1']//td[@class='ng-binding'][2]")
+    WebElement withDrawTransaction;
+
+
 
 
     public void loginAsCustomer(String customerName){
@@ -54,6 +64,16 @@ public class BankCustomerLoginPage {
         withdrawClickButton.click();
         Assert.assertEquals(BrowserUtils.getText(message),expectedMessage);
         Assert.assertEquals(message.getCssValue("color"),expectedColor);
+    }
+
+    public void transaction() throws InterruptedException {
+        int actualBalance=Integer.parseInt(BrowserUtils.getText(balance));
+        Thread.sleep(2000);
+        transactionButton.click();
+        Thread.sleep(2000);
+        int transactionBalance=Integer.parseInt(BrowserUtils.getText(depositTransaction))
+                               - Integer.parseInt(BrowserUtils.getText(withDrawTransaction));
+        Assert.assertEquals(actualBalance,transactionBalance);
     }
 
 
