@@ -36,6 +36,14 @@ public class BankLoginPage {
         managerLoginButton.click();
     }
 
+    public void clickHomeButton(){
+        homeButton.click();
+    }
+
+    public void clickCustomerLoginButton(){
+        customerLoginButton.click();
+    }
+
      //STORY: Testing AddCustomer Functionality
     /*
     1-Navigate website
