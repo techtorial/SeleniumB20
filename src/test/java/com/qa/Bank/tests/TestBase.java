@@ -2,8 +2,10 @@ package com.qa.Bank.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utils.BrowserUtils;
 import utils.ConfigReader;
 
 import java.time.Duration;
@@ -22,7 +24,10 @@ public class TestBase {
     }
 
     @AfterMethod //It will run after every @Test Annotation
-    public void tearDown(){
+    public void tearDown(ITestResult iTestResult){
+        if(!iTestResult.isSuccess()){
+            BrowserUtils.getScreenShot(driver,"bank");
+        }
         driver.quit();
     }
 }

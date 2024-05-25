@@ -37,14 +37,14 @@ public class BankCustomerLoginTest extends TestBase{
 
         //Customers Functionality
         bankManagerLoginPage.customers("Ahmet","Ahmet","Baldir",
-                "60143","true");
+                "60434","true");
 
         //CustomerLogin And Validate  Message
         bankLoginPage.clickHomeButton();
         bankLoginPage.clickCustomerLoginButton();
         BankCustomerLoginPage bankCustomerLoginPage=new BankCustomerLoginPage(driver);
         bankCustomerLoginPage.loginAsCustomer("Ahmet Baldir");
-        bankCustomerLoginPage.deposit("500","Deposit Successful","rgba(255, 0, 0, 1)");
+        bankCustomerLoginPage.deposit("500","Deposit Successfully","rgba(255, 0, 0, 1)");
         bankCustomerLoginPage.withdraw("300","Transaction successful","rgba(255, 0, 0, 1)");
         bankCustomerLoginPage.transaction();
     }
