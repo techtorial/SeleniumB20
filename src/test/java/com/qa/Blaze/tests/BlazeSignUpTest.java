@@ -16,3 +16,4 @@ public class BlazeSignUpTest extends BlazeTestBase {
                 ConfigReader.readProperty("password"),"Sign up successful.");
     }
 }
+
