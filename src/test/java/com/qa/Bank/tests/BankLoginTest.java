@@ -7,15 +7,15 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class BankLoginTest {
+public class BankLoginTest extends TestBase{
 
     @Test
     public void validateLoginInformation(){
-        //SETUP AUTOMATION
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+//        //SETUP AUTOMATION
+//        WebDriver driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
 
         //VALIDATE THE LOGIN PAGE INFORMATION
         BankLoginPage bankLoginPage=new BankLoginPage(driver); //to access the methods from this class

@@ -9,15 +9,15 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class BankCustomerLoginTest {
+public class BankCustomerLoginTest extends TestBase{
 
     @Test
     public void validateCustomerTransaction() throws InterruptedException {
-        //SETUP AUTOMATION
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+//        //SETUP AUTOMATION
+//        WebDriver driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.navigate().to("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
 
         //Click BankManagerLogin Button from LoginPage
         BankLoginPage bankLoginPage=new BankLoginPage(driver);
