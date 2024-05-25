@@ -44,7 +44,7 @@ public class BankCustomerLoginTest extends TestBase{
         bankLoginPage.clickCustomerLoginButton();
         BankCustomerLoginPage bankCustomerLoginPage=new BankCustomerLoginPage(driver);
         bankCustomerLoginPage.loginAsCustomer("Ahmet Baldir");
-        bankCustomerLoginPage.deposit("500","Deposit Successfully","rgba(255, 0, 0, 1)");
+        bankCustomerLoginPage.deposit("500","Deposit Successful","rgba(255, 0, 0, 1)");
         bankCustomerLoginPage.withdraw("300","Transaction successful","rgba(255, 0, 0, 1)");
         bankCustomerLoginPage.transaction();
     }
