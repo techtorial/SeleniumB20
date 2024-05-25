@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utils.BrowserUtils;
 import utils.ConfigReader;
+import utils.DriverHelper;
 
 import java.time.Duration;
 
@@ -16,10 +17,7 @@ public class TestBase {
 
     @BeforeMethod //It will run before every @Test Annotation
     public void setup(){
-        //SETUP AUTOMATION
-        driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver= DriverHelper.getDriver();
         driver.navigate().to(ConfigReader.readProperty("qa_url"));
     }
 

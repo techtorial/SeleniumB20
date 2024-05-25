@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utils.BrowserUtils;
 import utils.ConfigReader;
+import utils.DriverHelper;
 
 import java.time.Duration;
 
@@ -14,20 +15,21 @@ public class BlazeTestBase {
 
     public WebDriver driver;
 
-@BeforeMethod
-    public void setup(){
-        driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    @BeforeMethod
+    public void setup() {
+//        driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver = DriverHelper.getDriver();
         driver.get(ConfigReader.readProperty("qa_blaze_url"));
     }
 
     @AfterMethod
-    public void teardown(ITestResult iTestResult){
-        if(!iTestResult.isSuccess()){
-            BrowserUtils.getScreenShot(driver,"blaze");
+    public void teardown(ITestResult iTestResult) {
+        if (!iTestResult.isSuccess()) {
+            BrowserUtils.getScreenShot(driver, "blaze");
         }
-      //  driver.quit();
+        //  driver.quit();
     }
 
 
