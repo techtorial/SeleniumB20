@@ -6,6 +6,7 @@ import com.qa.Bank.pages.BankManagerLoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import utils.ConfigReader;
 
 import java.time.Duration;
 
@@ -25,8 +26,10 @@ public class BankCustomerLoginTest extends TestBase{
 
         //Provide All details in AddCustomer Button from BankManager Page
         BankManagerLoginPage bankManagerLoginPage=new BankManagerLoginPage(driver);
-        bankManagerLoginPage.addCustomer(driver,"Ahmet","Baldir","60143",
-                "Customer added successfully");
+        bankManagerLoginPage.addCustomer(driver, ConfigReader.readProperty("firstname"),
+                                                 ConfigReader.readProperty("lastname"),
+                                                 ConfigReader.readProperty("postcode"),
+                                                 ConfigReader.readProperty("message"));
 
         //Open Account Functionality
         bankManagerLoginPage.openAccount(driver,"Ahmet Baldir","Dollar",
