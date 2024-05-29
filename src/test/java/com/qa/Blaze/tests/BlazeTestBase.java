@@ -29,7 +29,7 @@ public class BlazeTestBase {
         if (!iTestResult.isSuccess()) {
             BrowserUtils.getScreenShot(driver, "blaze");
         }
-        //  driver.quit();
+         driver.quit();
     }
 
 
