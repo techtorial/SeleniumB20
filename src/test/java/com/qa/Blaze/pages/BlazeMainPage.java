@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utils.BrowserUtils;
 
+import java.util.List;
+
 public class BlazeMainPage {
 
     public BlazeMainPage(WebDriver driver){
@@ -22,6 +24,12 @@ public class BlazeMainPage {
     @FindBy(css = "#nameofuser")
     WebElement usernameHeader;
 
+    @FindBy(xpath = "//a[@id='itemc']")
+    List<WebElement> allCategories;
+
+    @FindBy(xpath = "//a[@class='hrefch']")
+    List<WebElement> allProducts;
+
     public void clickSignUpButton(){
         signUpButton.click();
     }
@@ -33,5 +41,25 @@ public class BlazeMainPage {
         Thread.sleep(2000);
         Assert.assertTrue(usernameHeader.isDisplayed());
         Assert.assertTrue(BrowserUtils.getText(usernameHeader).startsWith(expectedHeader));
+    }
+
+    public void chooseCategory(String expectedCategory) throws InterruptedException {
+        Thread.sleep(2000);
+        for(WebElement category:allCategories){
+            if(BrowserUtils.getText(category).contains(expectedCategory)){
+                category.click();
+                break;
+            }
+        }
+    }
+
+    public void chooseProduct(String expectedProduct) throws InterruptedException {
+        Thread.sleep(2000);
+        for(WebElement product:allProducts){
+            if(BrowserUtils.getText(product).contains(expectedProduct)){
+                product.click();
+                break;
+            }
+        }
     }
 }
