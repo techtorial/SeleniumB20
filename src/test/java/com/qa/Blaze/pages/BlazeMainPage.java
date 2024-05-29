@@ -30,6 +30,9 @@ public class BlazeMainPage {
     @FindBy(xpath = "//a[@class='hrefch']")
     List<WebElement> allProducts;
 
+    @FindBy(linkText = "Cart")
+    WebElement cartButton;
+
     public void clickSignUpButton(){
         signUpButton.click();
     }
@@ -61,5 +64,9 @@ public class BlazeMainPage {
                 break;
             }
         }
+    }
+
+    public void clickCartButton(){
+        cartButton.click();
     }
 }
