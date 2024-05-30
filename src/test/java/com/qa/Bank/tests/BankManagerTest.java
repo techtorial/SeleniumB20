@@ -4,6 +4,7 @@ import com.qa.Bank.pages.BankLoginPage;
 import com.qa.Bank.pages.BankManagerLoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -26,6 +27,15 @@ public class BankManagerTest extends TestBase{
         BankManagerLoginPage bankManagerLoginPage=new BankManagerLoginPage(driver);
         bankManagerLoginPage.addCustomer(driver,"Ahmet","Baldir","60143",
         "Customer added successfully");
+    }
+    @Parameters({"firstName","lastName","postCode","expectedMessage"})
+    @Test
+    public void validateAddCustomerFunctionalityParameter(String firstName,String lastName,
+                                                          String postCode,String expectedMessage){
+        BankLoginPage bankLoginPage=new BankLoginPage(driver);
+        bankLoginPage.clickManagerLoginButton();
+        BankManagerLoginPage bankManagerLoginPage=new BankManagerLoginPage(driver);
+        bankManagerLoginPage.addCustomer(driver,firstName,lastName,postCode, expectedMessage);
     }
 
     @Test

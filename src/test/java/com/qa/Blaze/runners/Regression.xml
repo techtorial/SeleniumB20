@@ -4,6 +4,19 @@
 
     <test name="Blaze Test">
 
+        <parameter name="category" value="Laptops"> </parameter>
+        <parameter name="product" value="MacBook Pro"> </parameter>
+        <parameter name="price" value="$1100 *includes tax"> </parameter>
+        <parameter name="message" value="Product added."> </parameter>
+        <parameter name="name" value="Ahmet"> </parameter>
+        <parameter name="country" value="USA"> </parameter>
+        <parameter name="city" value="Chicago"> </parameter>
+        <parameter name="cardNumber" value="1231232"> </parameter>
+        <parameter name="month" value="12"> </parameter>
+        <parameter name="year" value="2025"> </parameter>
+        <parameter name="successMessage" value="Thank you for your purchase!"> </parameter>
+        <parameter name="url" value="https://www.demoblaze.com/index.html"> </parameter>
+
         <classes>
 
             <class name="com.qa.Blaze.tests.BlazeSignUpTest"> </class>

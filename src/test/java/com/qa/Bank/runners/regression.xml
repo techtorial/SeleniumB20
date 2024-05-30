@@ -4,6 +4,11 @@
 
     <test name="Bank Test">
 
+        <parameter name="firstName" value="Ahmet"> </parameter>
+        <parameter name="lastName" value="Baldir"> </parameter>
+        <parameter name="postCode" value="60143"> </parameter>
+        <parameter name="expectedMessage" value="Customer added successfully"> </parameter>
+
         <classes>
             <class name="com.qa.Bank.tests.BankLoginTest"> </class>
             <class name="com.qa.Bank.tests.BankManagerTest"> </class>
