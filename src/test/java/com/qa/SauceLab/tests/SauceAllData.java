@@ -25,4 +25,16 @@ public class SauceAllData {
         };
     }
 
+    @DataProvider(name = "inventoryTest")
+    public Object[][] inventoryTestData() {
+        return new Object[][]{
+                {"Sauce Labs Backpack","Sly Pack","$29.99"},
+                {"Sauce Labs Bike Light","Water-resistant","$9.99"},
+                {"Sauce Labs Bolt T-Shirt","T-shirt","$15.99"},
+                {"Sauce Labs Fleece Jacket","midweight quarter","$49.99"},
+                {"Sauce Labs Onesie","automation engineer","$7.99"},
+                {"Test.allTheThings() T-Shirt (Red)","Labs t-shirt","$15.99"}
+        };
+    }
+
 }
