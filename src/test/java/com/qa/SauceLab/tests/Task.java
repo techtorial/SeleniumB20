@@ -10,4 +10,13 @@ public class Task {
       -->Correct username no password validate message
       -->locked_out_user and correct password validate message
      */
+
+    /*
+    1-Login successfully with Config.Reader(username and password)
+    2-loop through each item and click the one you want to choose and break it
+    3-Validate header, contains description and price
+    NOTE:Do it with all DataProvider
+    NOTE:2 Classes -->Inventory Page and Inventory Test
+     */
+
 }
