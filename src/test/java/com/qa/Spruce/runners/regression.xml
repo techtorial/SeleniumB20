@@ -7,7 +7,9 @@
         <parameter name="expectedTitle" value="6-Ingredient Roasted Salmon Fillets"> </parameter>
 
         <classes>
+
             <class name="com.qa.Spruce.tests.SpruceSeaFoodTest"> </class>
+
         </classes>
     </test>
 </suite>
